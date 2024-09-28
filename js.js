@@ -18,14 +18,14 @@ donateBtn1.addEventListener("click", function () {
 
   const currentDeposit1 = parseFloat(
     document.getElementById("CashDeposit1").innerText
-  ); // Get the current deposited amount
+  );
   const newDeposit1 = currentDeposit1 + donated1;
   document.getElementById("CashDeposit1").innerText = newDeposit1;
 
   document.getElementById("Cashinput1").value = "";
 });
 
-// For the Feni
+// For Feni
 const donateBtn2 = document.getElementById("DonateBtn2");
 donateBtn2.addEventListener("click", function () {
   const donated2 = parseFloat(document.getElementById("Cashinput2").value);
@@ -45,7 +45,7 @@ donateBtn2.addEventListener("click", function () {
 
   const currentDeposit2 = parseFloat(
     document.getElementById("CashDeposit2").innerText
-  ); // Get the current deposited amount
+  );
   const newDeposit2 = currentDeposit2 + donated2;
   document.getElementById("CashDeposit2").innerText = newDeposit2;
 
@@ -77,4 +77,22 @@ donateBtn3.addEventListener("click", function () {
   document.getElementById("CashDeposit3").innerText = newDeposit3;
 
   document.getElementById("Cashinput3").value = "";
+});
+
+// History section functionality
+const donateBtn = document.getElementById("donate");
+donateBtn.addEventListener("click", function () {
+  event.preventDefault();
+});
+const historyBtn = document.getElementById("HistoryBtn");
+historyBtn.addEventListener("click", function () {
+  event.preventDefault();
+  historyBtn.classList.add("bg-green1", "text-black");
+  donateBtn.classList.remove("bg-green1");
+  const cardPart = document.getElementById("Card");
+  cardPart.classList.add("hidden");
+
+  const historySection = document.getElementById("historySection");
+  historySection.style.display = "block";
+
 });
